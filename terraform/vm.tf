@@ -4,8 +4,8 @@
 
 resource "azurerm_linux_virtual_machine" "web" {
   name                = "vm-web-01"
-  resource_group_name = azurerm_resource_group.main.name
-  location            = azurerm_resource_group.main.location
+  resource_group_name = azurerm_resource_group.rg-azure-vnet-project.name
+  location            = azurerm_resource_group.rg-azure-vnet-project.location
   size                = var.vm_size
   admin_username      = var.admin_username
 
@@ -46,8 +46,8 @@ resource "azurerm_linux_virtual_machine" "web" {
 
 resource "azurerm_linux_virtual_machine" "app" {
   name                = "vm-app-01"
-  resource_group_name = azurerm_resource_group.main.name
-  location            = azurerm_resource_group.main.location
+  resource_group_name = azurerm_resource_group.rg-azure-vnet-project.name
+  location            = azurerm_resource_group.rg-azure-vnet-project.location
   size                = var.vm_size
   admin_username      = var.admin_username
 
@@ -87,8 +87,8 @@ resource "azurerm_linux_virtual_machine" "app" {
 
 resource "azurerm_linux_virtual_machine" "db" {
   name                = "vm-db-01"
-  resource_group_name = azurerm_resource_group.main.name
-  location            = azurerm_resource_group.main.location
+  resource_group_name = azurerm_resource_group.rg-azure-vnet-project.name
+  location            = azurerm_resource_group.rg-azure-vnet-project.location
   size                = var.vm_size
   admin_username      = var.admin_username
 
