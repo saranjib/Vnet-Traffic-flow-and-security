@@ -147,3 +147,60 @@ resource "azurerm_subnet_route_table_association" "app" {
   subnet_id      = azurerm_subnet.app.id
   route_table_id = azurerm_route_table.app.id
 }
+
+# ---------------------------------------------------------
+# Public IP - Web VM only
+# ---------------------------------------------------------
+
+resource "azurerm_public_ip" "web" {
+  name                = "pip-web-vm"
+  location            = azurerm_resource_group.rg-azure-vnet-project.location
+  resource_group_name = azurerm_resource_group.rg-azure-vnet-project.name
+  allocation_method   = "Static"
+  sku                 = "Standard"
+}
+
+# ---------------------------------------------------------
+# Network Interfaces
+# ---------------------------------------------------------
+
+resource "azurerm_network_interface" "web" {
+  name                = "nic-web-vm"
+  location            = azurerm_resource_group.rg-azure-vnet-project.location
+  resource_group_name = azurerm_resource_group.rg-azure-vnet-project.name
+
+  ip_configuration {
+    name                          = "internal"
+    subnet_id                     = azurerm_subnet.web.id
+    private_ip_address_allocation = "Static"
+    private_ip_address            = "10.10.1.4"
+    public_ip_address_id          = azurerm_public_ip.web.id
+  }
+}
+
+resource "azurerm_network_interface" "app" {
+  name                = "nic-app-vm"
+  location            = azurerm_resource_group.rg-azure-vnet-project.location
+  resource_group_name = azurerm_resource_group.rg-azure-vnet-project.name
+
+  ip_configuration {
+    name                          = "internal"
+    subnet_id                     = azurerm_subnet.app.id
+    private_ip_address_allocation = "Static"
+    private_ip_address            = "10.10.2.4"
+  }
+}
+
+resource "azurerm_network_interface" "db" {
+  name                = "nic-db-vm"
+  location            = azurerm_resource_group.rg-azure-vnet-project.location
+  resource_group_name = azurerm_resource_group.rg-azure-vnet-project.name
+
+  ip_configuration {
+    name                          = "internal"
+    subnet_id                     = azurerm_subnet.db.id
+    private_ip_address_allocation = "Static"
+    private_ip_address            = "10.10.3.4"
+  }
+}
+
