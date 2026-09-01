@@ -4,7 +4,6 @@ The lab focuses on understanding how network traffic flows between Azure resourc
 
 
 ## 🏗️ Architecture
-
 ![Architecture](architecture.png)
 
 
