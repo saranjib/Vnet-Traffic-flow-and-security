@@ -58,42 +58,6 @@ The project uses:
 
 ---
 
-# 🌐 IP Addressing Plan
-
-### VNet
-
-```text
-VNet: 10.10.0.0/16
-```
-
-### Subnets
-
-```text
-Web Subnet
-10.10.1.0/24
-
-App Subnet
-10.10.2.0/24
-
-DB Subnet
-10.10.3.0/24
-```
-
-Example VM addresses:
-
-```text
-VM-01 Web
-10.10.1.4
-
-VM-02 App
-10.10.2.4
-
-VM-03 DB
-10.10.3.4
-```
-
----
-
 # 🔐 NSG Security Design
 
 The network follows a basic **least-privilege** model.
@@ -153,59 +117,6 @@ Example:
 Associate them with their corresponding subnets.
 
 Configure rules according to the security model above.
-
----
-
-
-# 🔐 Security Improvements
-
-After completing the basic lab, implement these improvements:
-
-### 1. Remove unnecessary public IPs
-
-Only expose resources that actually require Internet access.
-
-### 2. Restrict SSH
-
-Instead of:
-
-```text
-Internet → TCP/22
-```
-
-use:
-
-```text
-Your trusted IP → TCP/22
-```
-
-### 3. Separate workloads
-
-Use different subnets for:
-
-```text
-Web
-Application
-Database
-```
-
-### 4. Use private communication
-
-Application and database resources should communicate using private IP addresses.
-
-### 5. Implement centralized inspection
-
-Extend the lab with:
-
-```text
-Azure Firewall
-```
-
-or a suitable network virtual appliance.
-
-### 6. Monitor traffic
-
-Add Azure monitoring/logging capabilities and investigate denied traffic.
 
 ---
 
