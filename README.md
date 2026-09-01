@@ -2,6 +2,10 @@
 A hands-on cloud networking lab focused on designing, configuring, and securing custom Azure Virtual Network (Vnet) infrastructure on Azure.
 The lab focuses on understanding how network traffic flows between Azure resources and how **Network Security Groups (NSGs), route tables, and subnet architecture** can be used to control and secure communication.
 
+
+## 🏗️ Architecture
+![Architecture](architecture.png)
+
 ### Key Concepts
 
 * Azure Virtual Network (VNet)
@@ -17,8 +21,6 @@ The lab focuses on understanding how network traffic flows between Azure resourc
 * Least-privilege network access
 
 ---
-
-## 🏗️ Architecture
 
 
 # 🎯 Project Objectives
