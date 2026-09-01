@@ -160,3 +160,68 @@ After completing this project, you should be able to explain:
 
 ---
 
+# 💡 Optional Advanced Challenges
+
+Once the basic lab works, extend it.
+
+## Challenge 1 — Azure Firewall
+
+Create:
+
+```text
+Internet
+   ↓
+Azure Firewall
+   ↓
+Web Subnet
+   ↓
+App Subnet
+   ↓
+DB Subnet
+```
+
+Implement centralized traffic inspection.
+
+---
+
+## Challenge 2 — Bastion
+
+Remove public IPs from the VMs and use Azure Bastion for administrative access.
+
+---
+
+## Challenge 3 — Private DNS
+
+Create a private DNS zone and access services using names instead of IP addresses.
+
+Example:
+
+```text
+app.internal
+db.internal
+```
+
+---
+
+## Challenge 4 — NSG Flow Logs
+
+Enable network traffic logging and analyze accepted/denied flows.
+
+---
+
+## Challenge 5 — Infrastructure as Code
+
+Recreate the entire environment using Terraform.
+
+The goal should be:
+
+```bash
+terraform init
+terraform plan
+terraform apply
+```
+
+and the complete networking lab is created automatically.
+
+---
+
