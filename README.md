@@ -4,7 +4,10 @@ The lab focuses on understanding how network traffic flows between Azure resourc
 
 
 ## 🏗️ Architecture
+
 ![Architecture](architecture.png)
+
+
 
 ### Key Concepts
 
@@ -19,8 +22,6 @@ The lab focuses on understanding how network traffic flows between Azure resourc
 * Network security rules
 * Traffic flow troubleshooting
 * Least-privilege network access
-
----
 
 
 # 🎯 Project Objectives
